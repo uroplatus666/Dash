@@ -14,7 +14,11 @@ places_count=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/StreamL
 rosgran_count=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/rosgran_count.csv')
 country_else=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/country_else.csv')
 
+fail_all_df=pd.read_excel('C:\\Users\\user\\Desktop\\Курсач\\Питон\\fail_all_df.xlsx')
+fail_places=pd.read_excel('C:\\Users\\user\\Desktop\\Курсач\\Питон\\fail_places.xlsx')
+
 # Initialize app
+
 
 app = Dash(__name__)
 
@@ -219,7 +223,7 @@ def update_output(value):
                 'xanchor': 'center',
                 'yanchor': 'top'})
     elif value == 'Сумма пересечений пропускных пунктов (по участкам)':
-        fig=px.histogram(places_copy, x="Количество", y="Сопредельное государство",
+        fig=px.histogram(all_df_copy, x="Количество", y="Сопредельное государство",
                          animation_frame="Категория",facet_col='Год',
                          orientation='h',facet_col_wrap=2,color="Вид",
                          title='<b>Сумма пересечений пропускных пунктов в 2017-2022 гг.</b>',
@@ -241,7 +245,7 @@ def update_output(value):
                 'xanchor': 'center',
                 'yanchor': 'top'})
     elif value == 'Усредненное количество пересечений пропускных пунктов (по участкам)':
-        fig=px.histogram(places_copy, x="Количество",
+        fig=px.histogram(all_df_copy, x="Количество",
                          y="Сопредельное государство",
                          animation_frame="Категория",
                          facet_col='Год',facet_col_wrap=2,
