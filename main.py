@@ -8,7 +8,7 @@ all_df_copy=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/mas
 all_df_copy_na=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/all_df_copy_na.csv')
 people_zero =pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/people_zero.csv')
 places_copy=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/places_copy.csv')
-push=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/push.csv')
+push=pd.read_excel('C:\\Users\\user\\Desktop\\Курсач\\Питон\\push.xlsx')
 controls_else=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/controls_else.csv')
 places_count=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/places_count.csv')
 rosgran_count=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/rosgran_count.csv')
@@ -295,13 +295,14 @@ def update_output(value):
     elif value == 'Перегруженные пункты пропуска (по участкам)':
         fig=px.bar(push,
                    x="Количество (Факт/Паспорт)", y="Сопредельное государство",
-                   animation_frame="Категория", facet_col='Год',
+                   facet_col='Год',
                    hover_name='Наименование пункта пропуска',
-                   facet_col_wrap=2,color="Вид",
-                   title='<b>Перегруженные пункты пропуска в 2017-2022 гг.</b>',
-                   labels=dict(Вид='<b>Вид пропускного пункта</b>',value=''),height=1300)
-        fig.update_yaxes(col=1,title_text='<b>Сопредельное государство</b>')
-        fig.update_yaxes(col=2,title_text=None)
+                   facet_col_wrap=1, color="Категория",
+                   labels=dict(Категория='<b>Категория</b>',value=''),height=1700, width=1250)
+        fig.update_yaxes(title_text='<b>Сопредельное государство</b>')
+        fig.update_xaxes(row=6, title_text=None)
+        fig.update_xaxes(row=5, title_text=None)
+        fig.update_xaxes(row=4, title_text=None)
         fig.update_xaxes(row=3, title_text=None)
         fig.update_xaxes(row=2, title_text=None)
         fig.update_xaxes(row=1, title_text='<b>Отношение фактического потока к паспортному</b>')
@@ -314,7 +315,7 @@ def update_output(value):
         fig.update_layout(
             title={
                 'text': "<b>Перегруженные пункты пропуска в 2017-2022 гг.</b>",
-                'y': 0.96,
+                'y': 0.99,
                 'x': 0.5,
                 'xanchor': 'center',
                 'yanchor': 'top'})
@@ -454,5 +455,5 @@ def update_output(value):
 
 
 if __name__ == '__main__':
-    app.run_server(port=8567)
+    app.run_server(port=8566)
 
