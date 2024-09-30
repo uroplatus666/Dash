@@ -3,17 +3,17 @@ from dash import Dash, dcc, html, Input, Output,callback
 import pandas as pd
 import plotly.graph_objects as go
 
-rosgran=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/rosgran.csv')
-all_df_copy=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/all_df_copy.csv')
-all_df_copy_na=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/all_df_copy_na.csv')
-people_zero =pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/people_zero.csv')
-places_copy=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/places_copy.csv')
-push=pd.read_excel('C:\\Users\\user\\Desktop\\Курсач\\Питон\\push.xlsx')
-controls_else=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/controls_else.csv')
-places_count=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/places_count.csv')
-rosgran_count=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/rosgran_count.csv')
-country_else=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/country_else.csv')
-all_df_copy_places=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/all_df_copy_places.csv')
+rosgran=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/data/rosgran.csv')
+all_df_copy=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/data/all_df_copy.csv')
+all_df_copy_na=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/data/all_df_copy_na.csv')
+people_zero =pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/data/people_zero.csv')
+places_copy=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/data/places_copy.csv')
+push=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/data/push.csv')
+controls_else=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/data/controls_else.csv')
+places_count=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/data/places_count.csv')
+rosgran_count=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/data/rosgran_count.csv')
+country_else=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/data/country_else.csv')
+all_df_copy_places=pd.read_csv('https://raw.githubusercontent.com/uroplatus666/Dash/master/data/all_df_copy_places.csv')
 
 # Initialize app
 
